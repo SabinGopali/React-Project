@@ -5,6 +5,7 @@ import Homepage from "./component/Homepage";
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Alert from "./component/Alert";
+import Fetching from "./component/Fetching";
  function App() {
 
 
@@ -73,11 +74,12 @@ function toggleblue(){
       <>
         
         <Router>
-        <Navbar title="Project" about ="About us" mode={mode} toggle={toggle} toggleblue={toggleblue}/>
+        <Navbar title="Project" about ="About Us" mode={mode} toggle={toggle} toggleblue={toggleblue}/>
               <Alert alert = {alert}/>
             <Routes>
             <Route path="/Homepage" element={<Homepage mode = {mode} />} />
             <Route path="/"  element={<About mode={mode} showAlert={showAlert}  />} />
+            <Route path="/Fetching"  element={<Fetching/>} />
             </Routes>
           
         </Router>

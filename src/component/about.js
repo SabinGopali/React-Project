@@ -22,6 +22,12 @@ export default function About(props) {
     setText(event.target.value)
     
   }
+
+  const clearText=()=>{
+
+    setText("")
+
+  }
   
   return (
     <div
@@ -53,8 +59,11 @@ export default function About(props) {
         <button className="mx-2 btn btn-primary" onClick={handleUpper}>
           Convert to Uppercase
         </button>
-        <button className="mx-2 btn btn-secondary" onClick={handleclear}>
+        <button className="mx-2 btn btn-warning" onClick={handleclear}>
           Remove Extra Spaces
+        </button>
+        <button className="mx-2 btn btn-danger" onClick={clearText}>
+          Clear Text
         </button>
 
         

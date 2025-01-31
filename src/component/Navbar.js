@@ -23,6 +23,9 @@ export default function Navbar(props) {
                     <li className="nav-item" style={props.mode}>
                     <Link className="nav-link" to="/Homepage" style={props.mode} >{props.about}</Link>
                     </li> 
+                    <li className="nav-item" style={props.mode}>
+                    <Link className="nav-link active" aria-current="page" to="/fetching" style={props.mode}>API Calling</Link>
+                    </li>
                 </ul>
                 <div className="form-check form-switch">
                 <input className="form-check-input" onClick={props.toggleblue} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
