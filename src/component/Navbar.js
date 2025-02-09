@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
@@ -25,6 +24,12 @@ export default function Navbar(props) {
                     </li> 
                     <li className="nav-item" style={props.mode}>
                     <Link className="nav-link active" aria-current="page" to="/fetching" style={props.mode}>API Calling</Link>
+                    </li>
+                    <li className="nav-item" style={props.mode}>
+                    <Link className="nav-link active" aria-current="page" to="/secondapi" style={props.mode}>Second API</Link>
+                    </li>
+                    <li className="nav-item" style={props.mode}>
+                    <Link className="nav-link active" aria-current="page" to="/Crud" style={props.mode}>CRUD </Link>
                     </li>
                 </ul>
                 <div className="form-check form-switch">

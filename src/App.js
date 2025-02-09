@@ -6,6 +6,8 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Alert from "./component/Alert";
 import Fetching from "./component/Fetching";
+import Secondapi from "./component/Secondapi";
+import Crud from "./component/Crud";
  function App() {
 
 
@@ -53,9 +55,10 @@ function toggleblue(){
       setMode(
           {
               color:'white',
-              backgroundColor:'blue'
+              backgroundColor:'cyan'
               
           })
+          document.body.style.backgroundColor = "cyan"
           showAlert("Blue mode enabled","Success")
         }
           
@@ -64,6 +67,7 @@ function toggleblue(){
           color:'black',
           backgroundColor:'white'
       })
+      document.body.style.backgroundColor = "white"
       showAlert("Blue mode disabled","Success")
     }
       
@@ -79,7 +83,9 @@ function toggleblue(){
             <Routes>
             <Route path="/Homepage" element={<Homepage mode = {mode} />} />
             <Route path="/"  element={<About mode={mode} showAlert={showAlert}  />} />
-            <Route path="/Fetching"  element={<Fetching/>} />
+            <Route path="/Fetching"  element={<Fetching mode={mode}/>} />
+            <Route path="/Secondapi"  element={<Secondapi mode={mode}/>} />
+            <Route path="/Crud"  element={<Crud mode={mode}/>} />
             </Routes>
           
         </Router>

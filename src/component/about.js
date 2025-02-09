@@ -1,9 +1,22 @@
 import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
+
+
 
 export default function About(props) {
 
   const [text, setText] = useState();
 
+  
+  const [count, setCount] = useState(0);
+  
+  const handleLike=()=>{
+
+    const like = count+1;
+    setCount(like)
+  }
   const handleUpper=()=>{
     let newText = text.toUpperCase();
     setText(newText)
@@ -30,10 +43,11 @@ export default function About(props) {
   }
   
   return (
+    <>
     <div
       style={{
-        color: props.mode.color, // ✅ Fixed text color
-        backgroundColor: props.mode.backgroundColor, // ✅ Fixed background color
+        color: props.mode.color, 
+        backgroundColor: props.mode.backgroundColor, 
         minHeight: "100vh",
         padding: "20px",
       }}
@@ -44,15 +58,7 @@ export default function About(props) {
           Type Here Anything
         </label>
         <textarea
-          className="form-control my-4"
-          id="exampleFormControlTextarea1"
-          // style={{
-          //   backgroundColor: props.mode.backgroundColor === "white" ? "#f0f0f0" : "#333", // ✅ Fixed check
-          //   color: props.mode.backgroundColor === "white" ? "black" : "white", // ✅ Fixed text color
-          //   border: "1px solid #ccc",
-          // }}
-          rows="6"
-          value={text}
+          className="form-control my-4" id="exampleFormControlTextarea1" rows="6" value={text}
           onChange={onchangehandler}
         ></textarea>
 
@@ -74,7 +80,15 @@ export default function About(props) {
           <p>Character Count: </p>
           <p>Word Count: </p>
         </div>
+      <div>
+      <img src="./e.jpg" className="img-fluid" alt="No image"></img>
+      <p>Like:  {count} </p>
+
+      </div>
+      <h3   onClick={handleLike}><FontAwesomeIcon style={{ cursor:'pointer' }} icon = {faHeart} /></h3>
       </div>
     </div>
+
+    </>
   );
 }
